@@ -1,13 +1,14 @@
 <template>
-  <h1>Hello</h1>
+  <ForexCrossRates/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ForexCrossRates from './components/ForexCrossRates.vue'
 
 export default defineComponent({
   name: 'App',
-  components: {},
+  components: {ForexCrossRates},
 });
 </script>
 
