@@ -1,9 +1,8 @@
 <template>
-  <div ref="tradingview" :id="container" class="tradingview-widget-container">
+  <div :id="container" ref="tradingview" class="tradingview-widget-container">
     <div class="tradingview-widget-container__widget"></div>
   </div>
 </template>
-
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 
@@ -13,20 +12,19 @@ export default defineComponent({
     options: {
       type: Object,
       default: () => ({
-        symbol: 'NASDAQ:AAPL',
-        color: 'blak',
-        isTransparent: false,
-        largeChartUrl: '',
-        displayMode: 'regular',
         width: '100%',
         height: '100%',
-        locale: 'br',
+        defaultColumn: 'overview',
+        screener_type: 'crypto_mkt',
+        displayCurrency: 'USD',
+        colorTheme: 'light',
+        locale: 'en',
       }),
     },
   },
   setup(props) {
-    const container = ref('tradingview-widget-container');
-    const scriptID = ref('tradingview-widget-script');
+    const container = ref('crypto_mkt');
+    const scriptID = ref('crypto_mkt_script');
     const tradingview = ref(null);
 
     const canUseDOM = () => {
@@ -49,7 +47,7 @@ export default defineComponent({
       script.id = scriptID.value;
       script.type = 'text/javascript';
       script.async = true;
-      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
       script.textContent = JSON.stringify(props.options);
       tradingview.value.appendChild(script);
     };
