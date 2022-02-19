@@ -1,7 +1,9 @@
 <template>
-  <div class=""><ForexCrossRates /> <CryptoMarket /></div>
+  <ForexCrossRates />
+  <CryptoMarket />
+  <ForexHeatMap />
   <div style="height: 400px">
-    <!-- <Chart /> -->
+    <Chart />
   </div>
 </template>
 
@@ -9,11 +11,12 @@
 import { defineComponent } from 'vue';
 import ForexCrossRates from './components/ForexCrossRates.vue';
 import CryptoMarket from './components/CryptoMarket.vue';
-// import Chart from './components/Chart.vue';
+import ForexHeatMap from './components/ForexHeatMap.vue';
+import Chart from './components/Chart.vue';
 
 export default defineComponent({
   name: 'App',
-  components: { CryptoMarket, ForexCrossRates },
+  components: { ForexHeatMap, ForexCrossRates, CryptoMarket, Chart },
 });
 </script>
 
