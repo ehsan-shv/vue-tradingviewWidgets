@@ -7,7 +7,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({
-  name: 'ForexCrossRates',
+  name: 'CryptoMarket',
   props: {
     options: {
       type: Object,
@@ -49,7 +49,7 @@ export default defineComponent({
       script.async = true;
       script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
       script.textContent = JSON.stringify(props.options);
-      tradingview.value.appendChild(script);
+      if (tradingview.value) tradingview.value.appendChild(script);
     };
 
     onMounted(() => {

@@ -51,7 +51,7 @@ export default defineComponent({
       script.async = true;
       script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
       script.textContent = JSON.stringify(props.options);
-      tradingview.value.appendChild(script);
+      if (tradingview.value) tradingview.value.appendChild(script);
     };
 
     onMounted(() => {
