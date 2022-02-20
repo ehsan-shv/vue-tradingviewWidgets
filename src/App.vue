@@ -3,6 +3,7 @@
   <CryptoMarket />
   <ForexHeatMap />
   <TechnicalAnalysis />
+  <MarketOverview />
   <div style="height: 400px">
     <Chart />
   </div>
@@ -14,11 +15,12 @@ import ForexCrossRates from './components/ForexCrossRates.vue';
 import CryptoMarket from './components/CryptoMarket.vue';
 import ForexHeatMap from './components/ForexHeatMap.vue';
 import TechnicalAnalysis from './components/TechnicalAnalysis.vue';
+import MarketOverview from './components/MarketOverview.vue';
 import Chart from './components/Chart.vue';
 
 export default defineComponent({
   name: 'App',
-  components: { ForexHeatMap, ForexCrossRates, CryptoMarket, Chart, TechnicalAnalysis },
+  components: { ForexHeatMap, ForexCrossRates, CryptoMarket, Chart, TechnicalAnalysis, MarketOverview },
 });
 </script>
 
