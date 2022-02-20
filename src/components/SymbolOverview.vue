@@ -1,9 +1,9 @@
 <template>
-  <div :id="container"></div>
+  <div ref="tradingview" :id="container" />
 </template>
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
 
+<script lang="ts">
+import { defineComponent, ref, onMounted } from 'vue';
 declare global {
   interface Window {
     TradingView: any;
@@ -12,29 +12,42 @@ declare global {
 window.TradingView = window.TradingView || {};
 
 export default defineComponent({
-  name: 'Chart',
+  name: 'SymbolOverview',
   props: {
     options: {
       type: Object,
       default: () => ({
-        width: 980,
-        height: 610,
-        symbol: 'BTCUSDT',
-        interval: 'D',
-        timezone: 'Etc/UTC',
-        theme: 'light',
-        style: '1',
-        locale: 'fa_IR',
-        toolbar_bg: '#f1f3f6',
-        enable_publishing: false,
-        allow_symbol_change: true,
-        container_id: 'tradingview-chart',
+        symbols: [
+          ['Apple', 'AAPL'],
+          ['Google', 'GOOGL'],
+          ['Microsoft', 'MSFT'],
+        ],
+        chartOnly: false,
+        width: 1000,
+        height: 400,
+        locale: 'en',
+        colorTheme: 'light',
+        gridLineColor: 'rgba(240, 243, 250, 0)',
+        fontColor: '#787B86',
+        isTransparent: false,
+        autosize: false,
+        showVolume: false,
+        scalePosition: 'no',
+        scaleMode: 'Normal',
+        fontFamily: 'Trebuchet MS, sans-serif',
+        noTimeScale: false,
+        valuesTracking: '1',
+        chartType: 'area',
+        lineColor: '#2962FF',
+        bottomColor: 'rgba(41, 98, 255, 0)',
+        topColor: 'rgba(41, 98, 255, 0.3)',
+        container_id: 'tradingview-symbol-overview',
       }),
     },
   },
   setup(props) {
-    const container = ref('tradingview-chart');
-    const scriptID = ref('tradingview-chart-script');
+    const container = ref('tradingview-symbol-overview');
+    const scriptID = ref('tradingview-symbol-overview-script');
 
     const canUseDOM = () => {
       return typeof window !== 'undefined' && window.document && window.document.createElement;
@@ -65,14 +78,14 @@ export default defineComponent({
       setTimeout(() => {
         if (typeof window.TradingView === 'undefined') return;
 
-        new window.TradingView.widget(Object.assign({ container_id: container }, props.options));
+        new window.TradingView.MediumWidget(Object.assign({ container_id: container }, props.options));
       }, 300);
     };
 
     onMounted(() => {
       appendScript(() => initWidget());
     });
-    return { canUseDOM, scriptExists, container };
+    return { container };
   },
 });
 </script>

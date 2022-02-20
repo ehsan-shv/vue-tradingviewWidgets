@@ -7,28 +7,28 @@ import { defineComponent } from 'vue';
 import useInitWidget from '../composable/useInitWidget';
 
 export default defineComponent({
-  name: 'ForexCrossRates',
+  name: 'Screener',
   props: {
     options: {
       type: Object,
       default: () => ({
-        symbol: 'NASDAQ:AAPL',
-        color: 'blak',
-        isTransparent: false,
-        largeChartUrl: '',
-        displayMode: 'regular',
-        width: '100%',
-        height: '100%',
-        locale: 'br',
+        width: 1100,
+        height: 523,
+        defaultColumn: 'overview',
+        defaultScreen: 'general',
+        market: 'forex',
+        showToolbar: true,
+        colorTheme: 'light',
+        locale: 'en',
       }),
     },
   },
   setup(props) {
     const { container, tradingview } = useInitWidget(
       props.options,
-      'tradingview-forex-cross-rates',
-      'tradingview-forex-cross-rates-script',
-      'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js'
+      'tradingview-screener',
+      'tradingview-screener-script',
+      'https://s3.tradingview.com/external-embedding/embed-widget-screener.js'
     );
 
     return { container, tradingview };

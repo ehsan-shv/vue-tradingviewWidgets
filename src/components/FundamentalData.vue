@@ -7,28 +7,28 @@ import { defineComponent } from 'vue';
 import useInitWidget from '../composable/useInitWidget';
 
 export default defineComponent({
-  name: 'ForexCrossRates',
+  name: 'FundamentalData',
   props: {
     options: {
       type: Object,
       default: () => ({
         symbol: 'NASDAQ:AAPL',
-        color: 'blak',
+        colorTheme: 'light',
         isTransparent: false,
         largeChartUrl: '',
         displayMode: 'regular',
-        width: '100%',
-        height: '100%',
-        locale: 'br',
+        width: 480,
+        height: 830,
+        locale: 'en',
       }),
     },
   },
   setup(props) {
     const { container, tradingview } = useInitWidget(
       props.options,
-      'tradingview-forex-cross-rates',
-      'tradingview-forex-cross-rates-script',
-      'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js'
+      'tradingview-fundamental-data',
+      'tradingview-fundamental-data-script',
+      'https://s3.tradingview.com/external-embedding/embed-widget-financials.js'
     );
 
     return { container, tradingview };
