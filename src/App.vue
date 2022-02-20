@@ -13,6 +13,7 @@
   <SymbolOverview />
   <MiniChart />
   <SymbolInfo />
+  <Screener />
   <Chart />
 </template>
 
@@ -33,6 +34,7 @@ import SingleTicker from './components/SingleTicker.vue';
 import MiniChart from './components/MiniChart.vue';
 import SymbolOverview from './components/SymbolOverview.vue';
 import SymbolInfo from './components/SymbolInfo.vue';
+import Screener from './components/Screener.vue';
 
 export default defineComponent({
   name: 'App',
@@ -52,6 +54,7 @@ export default defineComponent({
     MiniChart,
     SymbolOverview,
     SymbolInfo,
+    Screener,
   },
 });
 </script>
