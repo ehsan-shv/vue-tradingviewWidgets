@@ -6,6 +6,7 @@
   <MarketOverview />
   <MarketData />
   <StockMarket />
+  <EconomicCalendar />
   <div style="height: 400px">
     <Chart />
   </div>
@@ -21,6 +22,7 @@ import MarketOverview from './components/MarketOverview.vue';
 import MarketData from './components/MarketData.vue';
 import Chart from './components/Chart.vue';
 import StockMarket from './components/StockMarket.vue';
+import EconomicCalendar from './components/EconomicCalendar.vue';
 
 export default defineComponent({
   name: 'App',
@@ -33,6 +35,7 @@ export default defineComponent({
     MarketOverview,
     MarketData,
     StockMarket,
+    EconomicCalendar,
   },
 });
 </script>
