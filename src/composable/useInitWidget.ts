@@ -1,9 +1,5 @@
-import { ref, Ref, onMounted } from 'vue';
-
-interface ReturnedObject {
-  container: Ref<string>;
-  tradingview: Ref<HTMLDivElement | undefined>;
-}
+import { ref, onMounted } from 'vue';
+import { ReturnedObject } from '../types';
 
 export default (options: unknown, widgetContainer: string, widgetScriptID: string, src: string): ReturnedObject => {
   const container = ref(widgetContainer);

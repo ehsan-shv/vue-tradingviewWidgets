@@ -4,6 +4,8 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
+import { Options } from '../types';
+
 declare global {
   interface Window {
     TradingView: any;
@@ -43,6 +45,9 @@ export default defineComponent({
         topColor: 'rgba(41, 98, 255, 0.3)',
         container_id: 'tradingview-symbol-overview',
       }),
+      validator: (options: Options) => {
+        return options.container_id === 'tradingview-symbol-overview';
+      },
     },
   },
   setup(props) {

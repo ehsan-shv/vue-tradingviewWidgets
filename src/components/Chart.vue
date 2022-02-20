@@ -3,6 +3,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
+import { Options } from '../types';
 
 declare global {
   interface Window {
@@ -30,6 +31,9 @@ export default defineComponent({
         allow_symbol_change: true,
         container_id: 'tradingview-chart',
       }),
+      validator: (options: Options) => {
+        return options.container_id === 'tradingview-chart';
+      },
     },
   },
   setup(props) {
