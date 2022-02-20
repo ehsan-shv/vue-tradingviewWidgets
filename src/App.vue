@@ -15,6 +15,7 @@
   <SymbolInfo />
   <Screener />
   <FundamentalData />
+  <CompanyProfile />
   <Chart />
 </template>
 
@@ -37,6 +38,7 @@ import SymbolOverview from './components/SymbolOverview.vue';
 import SymbolInfo from './components/SymbolInfo.vue';
 import Screener from './components/Screener.vue';
 import FundamentalData from './components/FundamentalData.vue';
+import CompanyProfile from './components/CompanyProfile.vue';
 
 export default defineComponent({
   name: 'App',
@@ -58,6 +60,7 @@ export default defineComponent({
     SymbolInfo,
     Screener,
     FundamentalData,
+    CompanyProfile,
   },
 });
 </script>
