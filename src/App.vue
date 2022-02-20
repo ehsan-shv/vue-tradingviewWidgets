@@ -16,6 +16,7 @@
   <Screener />
   <FundamentalData />
   <CompanyProfile />
+  <Snaps />
   <Chart />
 </template>
 
@@ -39,6 +40,7 @@ import SymbolInfo from './components/SymbolInfo.vue';
 import Screener from './components/Screener.vue';
 import FundamentalData from './components/FundamentalData.vue';
 import CompanyProfile from './components/CompanyProfile.vue';
+import Snaps from './components/Snaps.vue';
 
 export default defineComponent({
   name: 'App',
@@ -61,6 +63,7 @@ export default defineComponent({
     Screener,
     FundamentalData,
     CompanyProfile,
+    Snaps,
   },
 });
 </script>
