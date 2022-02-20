@@ -20,12 +20,12 @@ export default defineComponent({
       default: () => ({
         width: 980,
         height: 610,
-        symbol: 'BTCUSDT',
+        symbol: 'NASDAQ:AAPL',
         interval: 'D',
         timezone: 'Etc/UTC',
         theme: 'light',
         style: '1',
-        locale: 'fa_IR',
+        locale: 'en',
         toolbar_bg: '#f1f3f6',
         enable_publishing: false,
         allow_symbol_change: true,
@@ -76,7 +76,7 @@ export default defineComponent({
     onMounted(() => {
       appendScript(() => initWidget());
     });
-    return { canUseDOM, scriptExists, container };
+    return { container };
   },
 });
 </script>
