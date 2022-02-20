@@ -3,7 +3,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent } from 'vue';
+import useInitWidget from '../composable/useInitWidget';
 
 export default defineComponent({
   name: 'ForexCrossRates',
@@ -23,41 +24,14 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const container = ref('tradingview-forex-cross-rates');
-    const scriptID = ref('tradingview-forex-cross-rates-script');
-    const tradingview = ref<HTMLDivElement>();
+    const { container, tradingview } = useInitWidget(
+      props.options,
+      'tradingview-forex-cross-rates',
+      'tradingview-forex-cross-rates-script',
+      'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js'
+    );
 
-    const canUseDOM = () => {
-      return typeof window !== 'undefined' && window.document && window.document.createElement;
-    };
-
-    const getScriptElement = () => {
-      return document.getElementById(scriptID.value);
-    };
-
-    const scriptExists = () => {
-      return getScriptElement() !== null;
-    };
-
-    const appendScript = () => {
-      if (!canUseDOM()) return;
-      if (scriptExists()) return;
-
-      const script = document.createElement('script');
-      script.id = scriptID.value;
-      script.type = 'text/javascript';
-      script.async = true;
-      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
-      script.textContent = JSON.stringify(props.options);
-      if (tradingview.value) tradingview.value.appendChild(script);
-    };
-
-    onMounted(() => {
-      setTimeout(() => {
-        appendScript();
-      }, 300);
-    });
-    return { canUseDOM, scriptExists, container, tradingview };
+    return { container, tradingview };
   },
 });
 </script>
