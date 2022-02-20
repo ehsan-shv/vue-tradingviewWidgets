@@ -1,7 +1,5 @@
 <template>
-  <div ref="tradingview" :id="container" class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-  </div>
+  <div ref="tradingview" :id="container" />
 </template>
 
 <script lang="ts">
@@ -25,9 +23,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const container = ref('tradingview-widget-container');
-    const scriptID = ref('tradingview-widget-script');
-    const tradingview = ref(null);
+    const container = ref('tradingview-forex-cross-rates');
+    const scriptID = ref('tradingview-forex-cross-rates-script');
+    const tradingview = ref<HTMLDivElement>();
 
     const canUseDOM = () => {
       return typeof window !== 'undefined' && window.document && window.document.createElement;

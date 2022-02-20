@@ -1,7 +1,5 @@
 <template>
-  <div :id="container" ref="tradingview" class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-  </div>
+  <div :id="container" ref="tradingview" />
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
@@ -23,9 +21,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const container = ref('crypto_mkt');
-    const scriptID = ref('crypto_mkt_script');
-    const tradingview = ref(null);
+    const container = ref('tradingview-crypto-market');
+    const scriptID = ref('tradingview-crypto-market-script');
+    const tradingview = ref<HTMLDivElement>();
 
     const canUseDOM = () => {
       return typeof window !== 'undefined' && window.document && window.document.createElement;

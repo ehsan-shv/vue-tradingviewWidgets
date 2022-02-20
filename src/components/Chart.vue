@@ -34,8 +34,7 @@ export default defineComponent({
   },
   setup(props) {
     const container = ref('tradingview-chart');
-    const scriptID = ref('tradingview-widget-script-chart');
-    // const tradingview = ref<HTMLDivElement>();
+    const scriptID = ref('tradingview-chart-script');
 
     const canUseDOM = () => {
       return typeof window !== 'undefined' && window.document && window.document.createElement;

@@ -1,7 +1,5 @@
 <template>
-  <div :id="container" ref="tradingviewHeatMap" class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-  </div>
+  <div :id="container" ref="tradingview" />
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
@@ -22,9 +20,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const container = ref('crypto_heatMap');
-    const scriptID = ref('heatMap_script');
-    const tradingviewHeatMap = ref<HTMLDivElement>();
+    const container = ref('tradingview-forex-heat-map');
+    const scriptID = ref('tradingview-forex-heat-map-script');
+    const tradingview = ref<HTMLDivElement>();
 
     const canUseDOM = () => {
       return typeof window !== 'undefined' && window.document && window.document.createElement;
@@ -48,7 +46,7 @@ export default defineComponent({
       script.async = true;
       script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js';
       script.textContent = JSON.stringify(props.options);
-      if (tradingviewHeatMap.value) tradingviewHeatMap.value.appendChild(script);
+      if (tradingview.value) tradingview.value.appendChild(script);
     };
 
     onMounted(() => {
@@ -56,7 +54,7 @@ export default defineComponent({
         appendScript();
       }, 300);
     });
-    return { canUseDOM, scriptExists, container, tradingviewHeatMap };
+    return { canUseDOM, scriptExists, container, tradingview };
   },
 });
 </script>
