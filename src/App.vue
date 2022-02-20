@@ -9,6 +9,7 @@
   <EconomicCalendar />
   <Ticker />
   <TickerTape />
+  <SingleTicker />
   <div style="height: 400px">
     <Chart />
   </div>
@@ -27,6 +28,7 @@ import StockMarket from './components/StockMarket.vue';
 import EconomicCalendar from './components/EconomicCalendar.vue';
 import Ticker from './components/Ticker.vue';
 import TickerTape from './components/TickerTape.vue';
+import SingleTicker from './components/SingleTicker.vue';
 
 export default defineComponent({
   name: 'App',
@@ -42,6 +44,7 @@ export default defineComponent({
     EconomicCalendar,
     Ticker,
     TickerTape,
+    SingleTicker,
   },
 });
 </script>
