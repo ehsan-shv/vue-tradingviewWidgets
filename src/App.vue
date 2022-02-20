@@ -12,9 +12,8 @@
   <SingleTicker />
   <SymbolOverview />
   <MiniChart />
-  <div style="height: 400px">
-    <Chart />
-  </div>
+  <SymbolInfo />
+  <Chart />
 </template>
 
 <script lang="ts">
@@ -33,6 +32,7 @@ import TickerTape from './components/TickerTape.vue';
 import SingleTicker from './components/SingleTicker.vue';
 import MiniChart from './components/MiniChart.vue';
 import SymbolOverview from './components/SymbolOverview.vue';
+import SymbolInfo from './components/SymbolInfo.vue';
 
 export default defineComponent({
   name: 'App',
@@ -51,6 +51,7 @@ export default defineComponent({
     SingleTicker,
     MiniChart,
     SymbolOverview,
+    SymbolInfo,
   },
 });
 </script>
