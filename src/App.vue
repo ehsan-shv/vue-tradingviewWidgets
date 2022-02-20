@@ -5,6 +5,7 @@
   <TechnicalAnalysis />
   <MarketOverview />
   <MarketData />
+  <StockMarket />
   <div style="height: 400px">
     <Chart />
   </div>
@@ -19,10 +20,20 @@ import TechnicalAnalysis from './components/TechnicalAnalysis.vue';
 import MarketOverview from './components/MarketOverview.vue';
 import MarketData from './components/MarketData.vue';
 import Chart from './components/Chart.vue';
+import StockMarket from './components/StockMarket.vue';
 
 export default defineComponent({
   name: 'App',
-  components: { ForexHeatMap, ForexCrossRates, CryptoMarket, Chart, TechnicalAnalysis, MarketOverview, MarketData },
+  components: {
+    ForexHeatMap,
+    ForexCrossRates,
+    CryptoMarket,
+    Chart,
+    TechnicalAnalysis,
+    MarketOverview,
+    MarketData,
+    StockMarket,
+  },
 });
 </script>
 
