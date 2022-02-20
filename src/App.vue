@@ -7,6 +7,7 @@
   <MarketData />
   <StockMarket />
   <EconomicCalendar />
+  <TickerWidget />
   <div style="height: 400px">
     <Chart />
   </div>
@@ -23,6 +24,7 @@ import MarketData from './components/MarketData.vue';
 import Chart from './components/Chart.vue';
 import StockMarket from './components/StockMarket.vue';
 import EconomicCalendar from './components/EconomicCalendar.vue';
+import TickerWidget from './components/TickerWidget.vue';
 
 export default defineComponent({
   name: 'App',
@@ -36,6 +38,7 @@ export default defineComponent({
     MarketData,
     StockMarket,
     EconomicCalendar,
+    TickerWidget,
   },
 });
 </script>
