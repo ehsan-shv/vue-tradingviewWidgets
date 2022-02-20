@@ -7,7 +7,7 @@ import { defineComponent } from 'vue';
 import useInitWidget from '../composable/useInitWidget';
 
 export default defineComponent({
-  name: 'TickerWidget',
+  name: 'Ticker',
   props: {
     options: {
       type: Object,
@@ -44,8 +44,8 @@ export default defineComponent({
   setup(props) {
     const { container, tradingview } = useInitWidget(
       props.options,
-      'tradingview-ticker-widget',
-      'tradingview-ticker-widget-script',
+      'tradingview-ticker',
+      'tradingview-ticker-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-tickers.js'
     );
 
