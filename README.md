@@ -12,13 +12,14 @@ npm i vue-tradingview-widgets
 <template>
   <Chart />
   <Snaps />
+  <Screener/>
 </template>
 
 <script lang="ts">
-import { Chart, Snaps } from 'vue-tradingview-widgets';
+import { Chart, Snaps, Screener } from 'vue-tradingview-widgets';
 
 export default {
-  components: { Chart, Snaps },
+  components: { Chart, Snaps, Screener },
 };
 </script>
 ```
