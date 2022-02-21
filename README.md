@@ -1,29 +1,25 @@
-# tradingview-vue
+# vue-tradingview-widgets
 
-## Project setup
-```
-npm install
-```
+## Instalation
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+```bash
+npm i vue-tradingview-widgets
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Import in component
 
-### Run your unit tests
-```
-npm run test:unit
-```
+```js
+<template>
+  <Chart />
+  <Snaps />
+  <Screener/>
+</template>
 
-### Lints and fixes files
-```
-npm run lint
-```
+<script lang="ts">
+import { Chart, Snaps, Screener } from 'vue-tradingview-widgets';
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+export default {
+  components: { Chart, Snaps, Screener },
+};
+</script>
+```
