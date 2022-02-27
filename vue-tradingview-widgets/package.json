@@ -1,7 +1,21 @@
 {
   "name": "vue-tradingview-widgets",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "tradingview widgets for Vue3 and Nuxt3",
+  "author": "Ehsan",
+  "keywords": [
+    "vue",
+    "nuxt",
+    "vue3",
+    "tradingview",
+    "chart",
+    "cryptomarket",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehsan-shv/vue-tradingviewWidgets.git"
+  },
   "main": "dist/vue-tradingview-widgets.ssr.js",
   "browser": "dist/vue-tradingview-widgets.esm.js",
   "module": "dist/vue-tradingview-widgets.esm.js",
@@ -9,7 +23,8 @@
   "types": "dist/types/src/entry.esm.d.ts",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "README.md"
   ],
   "sideEffects": false,
   "scripts": {

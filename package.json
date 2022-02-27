@@ -1,7 +1,9 @@
 {
   "name": "tradingview-vue",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "tradingview widgets for Vue3 and Nuxt3",
+  "author": "Ehsan",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
