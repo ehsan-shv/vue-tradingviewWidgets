@@ -57,9 +57,28 @@ export default defineComponent({
 </script>
 ```
 
+## Options
+
+```js
+<template>
+  <Chart />
+</template>
+
+<script lang="ts">
+import { Chart,CryptoMarket, Snaps, Screener } from 'vue-tradingview-widgets';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    Chart,
+  },
+});
+</script>
+```
+
 ## Nuxt Example
 
-first import in _/plugins/widgets.client_:
+First import in _/plugins/widgets.client.ts_:
 
 ```js
 import Chart from 'vue-tradingview-widgets';

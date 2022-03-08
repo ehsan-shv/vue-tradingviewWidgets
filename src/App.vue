@@ -1,7 +1,12 @@
 <template>
   <section>
     <h2>Chart Widget</h2>
-    <Chart />
+    <Chart
+      :options="{
+        theme: 'dark',
+        container_id: 'tradingview-charts',
+      }"
+    />
   </section>
   <section>
     <h2>Forex Cross Rates Widget</h2>
