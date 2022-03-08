@@ -57,9 +57,34 @@ export default defineComponent({
 </script>
 ```
 
+## Options
+
+All components have default options based on Tradingview. Check available options on [Tradingview](https://www.tradingview.com/widget/)
+
+```js
+<template>
+  <Chart
+    :options="{
+      theme: 'dark',
+    }"
+  />
+</template>
+
+<script lang="ts">
+import { Chart } from 'vue-tradingview-widgets';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    Chart,
+  },
+});
+</script>
+```
+
 ## Nuxt Example
 
-first import in _/plugins/widgets.client_:
+First import in _/plugins/widgets.client.ts_:
 
 ```js
 import Chart from 'vue-tradingview-widgets';

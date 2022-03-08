@@ -59,13 +59,19 @@ export default defineComponent({
 
 ## Options
 
+All components have default options based on Tradingview. Check available options on [Tradingview](https://www.tradingview.com/widget/)
+
 ```js
 <template>
-  <Chart />
+  <Chart
+    :options="{
+      theme: 'dark',
+    }"
+  />
 </template>
 
 <script lang="ts">
-import { Chart,CryptoMarket, Snaps, Screener } from 'vue-tradingview-widgets';
+import { Chart } from 'vue-tradingview-widgets';
 
 export default defineComponent({
   name: 'App',
