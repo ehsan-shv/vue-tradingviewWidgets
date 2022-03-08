@@ -11,19 +11,22 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        symbol: 'NASDAQ:AAPL',
-        width: 480,
-        height: 650,
-        colorTheme: 'light',
-        isTransparent: false,
-        locale: 'en',
-      }),
+      default: () => ({}),
     },
   },
   setup(props) {
+    const options = {
+      symbol: 'NASDAQ:AAPL',
+      width: 480,
+      height: 650,
+      colorTheme: 'light',
+      isTransparent: false,
+      locale: 'en',
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-company-profile',
       'tradingview-company-profile-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js'

@@ -11,21 +11,24 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        symbol: 'NASDAQ:AAPL',
-        color: 'blak',
-        isTransparent: false,
-        largeChartUrl: '',
-        displayMode: 'regular',
-        width: '100%',
-        height: '100%',
-        locale: 'br',
-      }),
+      default: () => ({}),
     },
   },
   setup(props) {
+    const options = {
+      symbol: 'NASDAQ:AAPL',
+      color: 'blak',
+      isTransparent: false,
+      largeChartUrl: '',
+      displayMode: 'regular',
+      width: '100%',
+      height: '100%',
+      locale: 'br',
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-forex-cross-rates',
       'tradingview-forex-cross-rates-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js'

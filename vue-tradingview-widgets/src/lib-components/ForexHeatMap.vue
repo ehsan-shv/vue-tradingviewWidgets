@@ -10,19 +10,22 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        width: 770,
-        height: 400,
-        currencies: ['EUR', 'USD', 'JPY', 'GBP', 'CHF', 'AUD', 'CAD', 'NZD', 'CNY'],
-        isTransparent: false,
-        colorTheme: 'light',
-        locale: 'en',
-      }),
+      default: () => ({}),
     },
   },
   setup(props) {
+    const options = {
+      width: 770,
+      height: 400,
+      currencies: ['EUR', 'USD', 'JPY', 'GBP', 'CHF', 'AUD', 'CAD', 'NZD', 'CNY'],
+      isTransparent: false,
+      colorTheme: 'light',
+      locale: 'en',
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-forex-heat-map',
       'tradingview-forex-heat-map-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js'

@@ -11,19 +11,22 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        colorTheme: 'light',
-        isTransparent: false,
-        width: '510',
-        height: '600',
-        locale: 'en',
-        importanceFilter: '-1,0,1',
-      }),
+      default: () => ({}),
     },
   },
   setup(props) {
+    const options = {
+      colorTheme: 'light',
+      isTransparent: false,
+      width: '510',
+      height: '600',
+      locale: 'en',
+      importanceFilter: '-1,0,1',
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-economic-calendar',
       'tradingview-economic-calendar-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-events.js'
