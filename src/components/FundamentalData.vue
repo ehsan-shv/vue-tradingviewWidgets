@@ -11,21 +11,24 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        symbol: 'NASDAQ:AAPL',
-        colorTheme: 'light',
-        isTransparent: false,
-        largeChartUrl: '',
-        displayMode: 'regular',
-        width: 480,
-        height: 830,
-        locale: 'en',
-      }),
+      default: () => ({}),
     },
   },
   setup(props) {
+    const options = {
+      symbol: 'NASDAQ:AAPL',
+      colorTheme: 'light',
+      isTransparent: false,
+      largeChartUrl: '',
+      displayMode: 'regular',
+      width: 480,
+      height: 830,
+      locale: 'en',
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-fundamental-data',
       'tradingview-fundamental-data-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-financials.js'

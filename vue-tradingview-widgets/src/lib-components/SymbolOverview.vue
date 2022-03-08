@@ -18,41 +18,39 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        symbols: [
-          ['Apple', 'AAPL'],
-          ['Google', 'GOOGL'],
-          ['Microsoft', 'MSFT'],
-        ],
-        chartOnly: false,
-        width: 1000,
-        height: 400,
-        locale: 'en',
-        colorTheme: 'light',
-        gridLineColor: 'rgba(240, 243, 250, 0)',
-        fontColor: '#787B86',
-        isTransparent: false,
-        autosize: false,
-        showVolume: false,
-        scalePosition: 'no',
-        scaleMode: 'Normal',
-        fontFamily: 'Trebuchet MS, sans-serif',
-        noTimeScale: false,
-        valuesTracking: '1',
-        chartType: 'area',
-        lineColor: '#2962FF',
-        bottomColor: 'rgba(41, 98, 255, 0)',
-        topColor: 'rgba(41, 98, 255, 0.3)',
-        container_id: 'tradingview-symbol-overview',
-      }),
-      validator: (options: Options) => {
-        return options.container_id === 'tradingview-symbol-overview';
-      },
+      default: () => ({}),
     },
   },
   setup(props) {
     const container = ref('tradingview-symbol-overview');
     const scriptID = ref('tradingview-symbol-overview-script');
+    const defualtOptions = {
+      symbols: [
+        ['Apple', 'AAPL'],
+        ['Google', 'GOOGL'],
+        ['Microsoft', 'MSFT'],
+      ],
+      chartOnly: false,
+      width: 1000,
+      height: 400,
+      locale: 'en',
+      colorTheme: 'light',
+      gridLineColor: 'rgba(240, 243, 250, 0)',
+      fontColor: '#787B86',
+      isTransparent: false,
+      autosize: false,
+      showVolume: false,
+      scalePosition: 'no',
+      scaleMode: 'Normal',
+      fontFamily: 'Trebuchet MS, sans-serif',
+      noTimeScale: false,
+      valuesTracking: '1',
+      chartType: 'area',
+      lineColor: '#2962FF',
+      bottomColor: 'rgba(41, 98, 255, 0)',
+      topColor: 'rgba(41, 98, 255, 0.3)',
+      container_id: 'tradingview-symbol-overview',
+    };
 
     const canUseDOM = () => {
       return typeof window !== 'undefined' && window.document && window.document.createElement;
@@ -83,7 +81,13 @@ export default defineComponent({
       setTimeout(() => {
         if (typeof window.TradingView === 'undefined') return;
 
-        new window.TradingView.MediumWidget(Object.assign({ container_id: container }, props.options));
+        const options: Options = { ...defualtOptions, ...props.options };
+        if (options.container_id !== container.value) {
+          console.error('container_id in SymbolOverview component must be "tradingview-symbol-overview"');
+          return;
+        }
+
+        new window.TradingView.MediumWidget(Object.assign({ container_id: container }, options));
       }, 300);
     };
 

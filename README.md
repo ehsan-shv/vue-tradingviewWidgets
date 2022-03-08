@@ -2,7 +2,7 @@
 
 <a href="https://www.npmjs.com/package/vue-tradingview-widgets"><img src="https://img.shields.io/npm/v/vue-tradingview-widgets.svg" alt="Version"></a>
 
-> [Tradingview](https://www.tradingview.com/widget/) widgets for Vue. [Demo](https://ehsan-shv.github.io/vue-tradingviewWidgets/)
+> [Tradingview](https://www.tradingview.com/widget/) widgets for Vue3. [Demo](https://ehsan-shv.github.io/vue-tradingviewWidgets/)
 
 ## Instalation
 
@@ -57,9 +57,34 @@ export default defineComponent({
 </script>
 ```
 
+## Options
+
+All components have default options based on Tradingview. Check available options on [Tradingview](https://www.tradingview.com/widget/)
+
+```js
+<template>
+  <Chart
+    :options="{
+      theme: 'dark',
+    }"
+  />
+</template>
+
+<script lang="ts">
+import { Chart } from 'vue-tradingview-widgets';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    Chart,
+  },
+});
+</script>
+```
+
 ## Nuxt Example
 
-first import in _/plugins/widgets.client_:
+First import in _/plugins/widgets.client.ts_:
 
 ```js
 import Chart from 'vue-tradingview-widgets';

@@ -11,18 +11,21 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default: () => ({
-        symbol: 'FX:EURUSD',
-        width: 350,
-        colorTheme: 'light',
-        isTransparent: false,
-        locale: 'en',
-      }),
+      default: () => ({}),
     },
   },
   setup(props) {
+    const options = {
+      symbol: 'FX:EURUSD',
+      width: 350,
+      colorTheme: 'light',
+      isTransparent: false,
+      locale: 'en',
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-single-ticker',
       'tradingview-single-ticker-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js'

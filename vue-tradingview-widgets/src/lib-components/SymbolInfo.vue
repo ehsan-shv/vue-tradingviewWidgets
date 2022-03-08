@@ -21,8 +21,17 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const options = {
+      symbol: 'NASDAQ:AAPL',
+      width: 1000,
+      locale: 'en',
+      colorTheme: 'light',
+      isTransparent: false,
+      ...props.options,
+    };
+
     const { container, tradingview } = useInitWidget(
-      props.options,
+      options,
       'tradingview-symbol-info',
       'tradingview-symbol-info-script',
       'https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js'
