@@ -1,11 +1,7 @@
 <template>
   <section>
     <h2>Chart Widget</h2>
-    <Chart
-      :options="{
-        theme: 'dark',
-      }"
-    />
+    <Chart />
   </section>
   <section>
     <h2>Forex Cross Rates Widget</h2>
