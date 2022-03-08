@@ -4,7 +4,6 @@
     <Chart
       :options="{
         theme: 'dark',
-        container_id: 'tradingview-charts',
       }"
     />
   </section>
