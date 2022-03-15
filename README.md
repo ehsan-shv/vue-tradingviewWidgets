@@ -4,7 +4,7 @@
 
 > [Tradingview](https://www.tradingview.com/widget/) widgets for Vue3. [Demo](https://ehsan-shv.github.io/vue-tradingviewWidgets/)
 
-## Instalation
+## Installation
 
 ```bash
 npm i vue-tradingview-widgets

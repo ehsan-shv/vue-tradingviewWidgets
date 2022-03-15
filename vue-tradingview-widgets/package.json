@@ -1,8 +1,9 @@
 {
   "name": "vue-tradingview-widgets",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "tradingview widgets for Vue3 and Nuxt3",
-  "author": "Ehsan",
+  "author": "Ehsan Shahvirdi",
+  "license": "MIT",
   "keywords": [
     "vue",
     "nuxt",
