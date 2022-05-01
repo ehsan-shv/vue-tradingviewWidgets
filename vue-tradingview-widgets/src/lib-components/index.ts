@@ -16,3 +16,4 @@ export { default as SymbolOverview } from './SymbolOverview.vue';
 export { default as TechnicalAnalysis } from './TechnicalAnalysis.vue';
 export { default as Ticker } from './Ticker.vue';
 export { default as TickerTape } from './TickerTape.vue';
+export { default as MarketOverview } from './MarketOverview.vue';
