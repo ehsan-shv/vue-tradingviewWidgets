@@ -33,7 +33,7 @@
         "format": "prettier .  --write --ignore-path .gitignore",
         "prepare": "husky install",
         "commit": "git-cz",
-        "semantic-release": "semantic-release"
+        "semantic-release": "semantic-release -b master"
     },
     "dependencies": {
         "vue": "^3.2.45"
