@@ -55,7 +55,7 @@ export default defineComponent({
             if (scriptExists()) return
 
             const script = document.createElement('script')
-            script.id = scriptID.value
+            script.id = scriptID.value + Date.now().toString(36)
             script.type = 'text/javascript'
             script.async = true
             script.src = 'https://s3.tradingview.com/tv.js'
