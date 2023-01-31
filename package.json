@@ -1,5 +1,5 @@
 {
-    "name": "tradingview-vue",
+    "name": "vue-tradingview-widgets",
     "version": "0.0.0-development",
     "private": false,
     "description": "tradingview widgets for Vue3 and Nuxt3",
