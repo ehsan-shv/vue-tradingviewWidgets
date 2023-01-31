@@ -12,25 +12,25 @@ npm i vue-tradingview-widgets
 
 ## Widgets
 
-- ForexHeatMap
-- ForexCrossRates
-- CryptoMarket
-- Chart
-- TechnicalAnalysis
-- MarketOverview
-- MarketData
-- StockMarket
-- EconomicCalendar
-- Ticker
-- TickerTape
-- SingleTicker
-- MiniChart
-- SymbolOverview
-- SymbolInfo
-- Screener
-- FundamentalData
-- CompanyProfile
-- Snaps
+-   ForexHeatMap
+-   ForexCrossRates
+-   CryptoMarket
+-   Chart
+-   TechnicalAnalysis
+-   MarketOverview
+-   MarketData
+-   StockMarket
+-   EconomicCalendar
+-   Ticker
+-   TickerTape
+-   SingleTicker
+-   MiniChart
+-   SymbolOverview
+-   SymbolInfo
+-   Screener
+-   FundamentalData
+-   CompanyProfile
+-   Snaps
 
 ## Vue Example
 
@@ -43,7 +43,7 @@ npm i vue-tradingview-widgets
 </template>
 
 <script lang="ts">
-import { Chart,CryptoMarket, Snaps, Screener } from 'vue-tradingview-widgets';
+import { Chart,CryptoMarket, Snaps, Screener } from 'vue-tradingview-widgets/components';
 
 export default defineComponent({
   name: 'App',
@@ -71,7 +71,7 @@ All components have default options based on Tradingview. Check available option
 </template>
 
 <script lang="ts">
-import { Chart } from 'vue-tradingview-widgets';
+import { Chart } from 'vue-tradingview-widgets/components';
 
 export default defineComponent({
   name: 'App',
@@ -87,12 +87,12 @@ export default defineComponent({
 First import in _/plugins/widgets.client.ts_:
 
 ```js
-import Chart from 'vue-tradingview-widgets';
-import Screener from 'vue-tradingview-widgets';
+import Chart from 'vue-tradingview-widgets'
+import Screener from 'vue-tradingview-widgets'
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(Chart);
-  nuxtApp.vueApp.use(Screener);
-});
+    nuxtApp.vueApp.use(Chart)
+    nuxtApp.vueApp.use(Screener)
+})
 ```
 
 Then use in components. **Plugin is auto-registered**.
