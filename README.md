@@ -2,12 +2,18 @@
 
 <a href="https://www.npmjs.com/package/vue-tradingview-widgets"><img src="https://img.shields.io/npm/v/vue-tradingview-widgets.svg" alt="Version"></a>
 
-> [Tradingview](https://www.tradingview.com/widget/) widgets for Vue3. [Demo](https://ehsan-shv.github.io/vue-tradingviewWidgets/)
+> [Tradingview](https://www.tradingview.com/widget/) widgets for Vue3. [Demo](https://codesandbox.io/s/vue-tradingview-widgets-demo-tyypvy/)
 
 ## Installation
 
 ```bash
 npm i vue-tradingview-widgets
+```
+
+or
+
+```bash
+yarn add vue-tradingview-widgets
 ```
 
 ## Widgets
