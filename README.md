@@ -43,7 +43,7 @@ npm i vue-tradingview-widgets
 </template>
 
 <script lang="ts">
-import { Chart,CryptoMarket, Snaps, Screener } from 'vue-tradingview-widgets/components';
+import { Chart,CryptoMarket, Snaps, Screener } from 'vue-tradingview-widgets';
 
 export default defineComponent({
   name: 'App',
@@ -71,7 +71,7 @@ All components have default options based on Tradingview. Check available option
 </template>
 
 <script lang="ts">
-import { Chart } from 'vue-tradingview-widgets/components';
+import { Chart } from 'vue-tradingview-widgets';
 
 export default defineComponent({
   name: 'App',
