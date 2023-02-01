@@ -5,6 +5,9 @@
     "description": "tradingview widgets for Vue3 and Nuxt3",
     "author": "Ehsan Shahvirdi",
     "license": "MIT",
+    "files": [
+        "dist"
+    ],
     "keywords": [
         "vue",
         "nuxt",
