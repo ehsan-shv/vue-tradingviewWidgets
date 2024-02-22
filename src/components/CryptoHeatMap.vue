@@ -6,7 +6,7 @@ import { defineComponent } from 'vue'
 import useInitWidget from '../composable/useInitWidget'
 
 export default defineComponent({
-    name: 'WForexHeatMap',
+    name: 'WCryptoHeatMap',
     props: {
         options: {
             type: Object,
